@@ -1,4 +1,4 @@
-module github.com/cfoxon/hivego
+module github.com/Snaddyvitch-Dispenser/hivego
 
 go 1.17
 
