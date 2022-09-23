@@ -33,7 +33,7 @@ func TestSignDigest(t *testing.T) {
 }
 
 func TestGphBase58CheckDecode(t *testing.T) {
-    got1, got2, _ := gphBase58CheckDecode("5JuMt237G3m3BaT7zH4YdoycUtbw4AEPy6DLdCrKAnFGAtXyQ1W")
+    got1, got2, _ := GphBase58CheckDecode("5JuMt237G3m3BaT7zH4YdoycUtbw4AEPy6DLdCrKAnFGAtXyQ1W")
     expected1 := []byte{143, 55, 174, 90, 120, 223, 222, 54, 91, 147, 72, 37, 164, 39, 94, 43, 230, 160, 223, 142, 67, 73, 158, 81, 48, 197, 148, 24, 63, 220, 121, 208}
     expected2 := [1]byte{128}
     if !bytes.Equal(got1, expected1) || got2 != expected2 {

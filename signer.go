@@ -70,7 +70,7 @@ func hashTx(tx []byte) []byte {
 }
 
 func SignDigest(digest []byte, wif *string) ([]byte, error) {
-    pk, _,  err := gphBase58CheckDecode(*wif)
+    pk, _,  err := GphBase58CheckDecode(*wif)
     if err != nil {
         return nil, err
     }
@@ -79,7 +79,7 @@ func SignDigest(digest []byte, wif *string) ([]byte, error) {
     return secp256k1.SignCompact(privKey,digest, true)
 }
 
-func gphBase58CheckDecode(input string) ([]byte, [1]byte, error){
+func GphBase58CheckDecode(input string) ([]byte, [1]byte, error){
     decoded := base58.Decode(input)
     if len(decoded) < 6 {
         return nil, [1]byte{0}, errors.New("invalid format: version and/or checksum bytes missing")
